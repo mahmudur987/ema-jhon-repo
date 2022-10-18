@@ -6,6 +6,11 @@
     justify-content: space-between;
     padding-left: 140px;
     padding-right: 140px;
+    color: aliceblue;
+}
+
+.header-nav h2 {
+    margin-right: 20px;
 }
 
 .header-nav a {
@@ -13,6 +18,7 @@
     text-decoration: none;
     margin-left: 36px;
     font-size: 17px;
+    margin-right: 20px;
 }
 
 .header-nav a:hover {
