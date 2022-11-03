@@ -7,6 +7,8 @@ import Login from './Components/Login/Login';
 import Orders from './Components/Orders/Orders';
 import Shop from './Components/Shop/Shop';
 import SignUp from './Components/SignUp/SignUp';
+import Shipping from './Components/Shipping/Shipping';
+import Privetroute from './Routes/PrivetRoute';
 import Main from './Layouts/Main';
 import { productsAndCartLoader } from './Loaders/Produsts and cart loader';
 
@@ -36,7 +38,11 @@ function App() {
         },
         {
           path: 'inventory',
-          element: <Inventory></Inventory>
+          element: <Privetroute><Inventory></Inventory></Privetroute>
+        },
+        {
+          path: 'shipping',
+          element: <Privetroute> <Shipping></Shipping></Privetroute>
         },
         {
           path: '/login',
@@ -46,6 +52,7 @@ function App() {
           path: '/signup',
           element: <SignUp></SignUp>
         },
+
       ]
     },
 

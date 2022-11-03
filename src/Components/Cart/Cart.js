@@ -5,7 +5,8 @@ import React from 'react';
 import './Cart.css'
 import { Link } from 'react-router-dom';
 const Cart = (props) => {
-    const { cart, clearCart } = props;
+    const { cart, clearCart, children } = props;
+    console.log(children)
     let Total = 0;
     let shiping = 0;
     let quantity = 0;
@@ -28,6 +29,7 @@ const Cart = (props) => {
             <Link to={'/order'}>
                 <button className='btn-review-order'>review Order  <FontAwesomeIcon icon={faArrowAltCircleRight}></FontAwesomeIcon></button>
             </Link>
+            {children}
         </div>
     );
 };

@@ -5,11 +5,11 @@ import logo from '../../images/Logo.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext)
     return (
         <div>
             <nav className='header-nav'>
-                <h2>{user.displayname}</h2>
+                <h2>{user?.email}</h2>
 
                 <img src={logo} alt="" />
 
@@ -18,9 +18,15 @@ const Header = () => {
                     <Link to="/">Shop</Link>
                     <Link to="/inventory">Inventory</Link>
                     <Link to="/about">About</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">SignUp</Link>
 
+                    {
+                        user ? <Link onClick={logout}> Logout</Link>
+                            :
+                            <>
+                                <Link to="/login">Login</Link>
+                                <Link to="/signup">SignUp</Link>
+                            </>
+                    }
 
                 </div>
 
